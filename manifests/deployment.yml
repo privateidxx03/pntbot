@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "newbot-6d79"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "newbot-6d79"
+  template:
+    metadata:
+      labels:
+        app: "newbot-6d79"
+    spec:
+      containers:
+        - name: "newbot-6d79"
+          image: "newbot.azurecr.io/newbot"
+          ports:
+          - containerPort: 80
